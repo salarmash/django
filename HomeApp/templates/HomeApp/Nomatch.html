@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}تاریخچه پیش بینی ها{% endblock %}
+{% block content %}
+    <!-- Matches -->
+    <div class="container mt-5 mb-5">
+        <div class="row d-flex justify-content-center mt-5">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center mt-5 me">
+                 <div class="alert alert-warning">
+                        <strong>Warning!</strong> مسابقه ای برای نمایش نیست
+                    </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center mt-5 me">
+                 <div>
+                        <a class="btn btn-primary mt-5" href="{% url "Home:History" %}">سابقه پیش بینی های شما</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

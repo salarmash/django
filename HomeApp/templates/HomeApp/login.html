@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}ورود{% endblock %}
+{% block content %}
+    <!-- Login Form -->
+    <h1>{{ time }}</h1>
+    <div class="container mt-5 ">
+        <div class="row d-flex justify-content-center align-items-center mt-5">
+
+            <div class="col-6 col-6-md col-6-sm mt-5 login ">
+                {% for msg in messages %}
+                    <div class="{% if msg.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}}alert alert-success{% else %}alert alert-danger{% endif %} mb-5"
+                         role="alert" id="alert">
+                        {{ msg }}
+                    </div>
+                {% endfor %}
+                <form method="post">
+
+                    {% csrf_token %}
+                    <div class="mb-3 mt-5">
+                        <label for="exampleFormControlInput1" class="form-label">نام کاربری</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name="username"
+                               placeholder="نام کاربری">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">رمز عبور</label>
+                        <input type="password" class="form-control" id="exampleFormControlInput1" name=password
+                               placeholder="رمز عبور">
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-primary">ورود</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
